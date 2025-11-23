@@ -1,9 +1,10 @@
 import streamlit as st
 from agents import Agent, Runner, OpenAIChatCompletionsModel, set_tracing_disabled 
-from openai import AsyncOpenAI
+from openai import  OpenAI
 from dotenv import load_dotenv
 import os
 import PyPDF2
+
 
 # Disable tracing for performance optimization
 set_tracing_disabled(True)
@@ -13,7 +14,7 @@ load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Configure the Gemini client
-client = AsyncOpenAI(
+client = OpenAI(
     api_key=GEMINI_API_KEY,
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
