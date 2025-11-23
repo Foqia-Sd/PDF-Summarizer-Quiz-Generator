@@ -1,9 +1,12 @@
 import streamlit as st
-from agents import Agent, Runner, OpenAIChatCompletionsModel 
+from agents import Agent, Runner, OpenAIChatCompletionsModel, set_tracing_disabled 
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
 import os
 import PyPDF2
+
+# Disable tracing for performance optimization
+set_tracing_disabled(True)
 
 # Load environment variables
 load_dotenv()
